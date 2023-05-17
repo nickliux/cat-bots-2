@@ -140,6 +140,7 @@ const Promptbar = () => {
     }
 
     // Check if there are no prompts. If true, add default prompts to state
+
     if (!prompts.length) {
       homeDispatch({ field: 'prompts', value: defaultPrompts });
       savePrompts(defaultPrompts);
