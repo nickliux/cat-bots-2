@@ -2,7 +2,6 @@ import {
   IconCheck,
   IconCopy,
   IconEdit,
-  IconRobot,
   IconTrash,
   IconUser,
 } from '@tabler/icons-react';

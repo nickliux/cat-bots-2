@@ -389,11 +389,11 @@ export const ChatInput = ({
           rel="noreferrer"
           className="underline"
         >
-          CatBot
+          CatGPT
         </a>
         {' '}
         {t(
-          "lets you chat with the furry friends of historical heros. It's built off of open-source code and GPT.",
+          "lets you chat with the furry friends of historical heros. Built off of open-source code and GPT.",
         )}
       </div>
     </div>
