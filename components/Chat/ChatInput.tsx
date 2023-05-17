@@ -393,7 +393,7 @@ export const ChatInput = ({
         </a>
         {' '}
         {t(
-          "lets you chat with the furry friends of historical heros. Built off of open-source code and GPT.",
+          "lets you chat with the furry friends of historical heros. Built on open-source code and OpenAI's GPT.",
         )}
       </div>
     </div>
