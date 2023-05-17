@@ -410,12 +410,11 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                   </div>
 
                   
-                  {
-                  {/*
-                  models.length > 0 && (
+                  {models.length > 0 && (
                     <div className="flex h-full flex-col space-y-4 rounded-lg border border-neutral-200 p-4 dark:border-neutral-600">
                       <ModelSelect />
 
+                      {/*
                       <SystemPrompt
                         conversation={selectedConversation}
                         prompts={prompts}
@@ -426,7 +425,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                           })
                         }
                       />
-
+                      
                       <TemperatureSlider
                         label={t('Temperature')}
                         onChangeTemperature={(temperature) =>
@@ -436,10 +435,10 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                           })
                         }
                       />
-                    </div>
-                  )
+
                       */}
-                  }
+                    </div>
+                  )}
                 </div>
               </>
             ) : (
