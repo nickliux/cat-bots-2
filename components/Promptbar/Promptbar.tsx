@@ -5,7 +5,7 @@ import { useCreateReducer } from '@/hooks/useCreateReducer';
 
 import { savePrompts } from '@/utils/app/prompts';
 
-import { OpenAIModels } from '@/types/openai';
+import { OpenAIModelID, OpenAIModels } from '@/types/openai';
 import { Prompt } from '@/types/prompt';
 
 import HomeContext from '@/pages/api/home/home.context';
@@ -42,6 +42,30 @@ const Promptbar = () => {
     homeDispatch({ field: 'showPromptbar', value: !showPromptbar });
     localStorage.setItem('showPromptbar', JSON.stringify(!showPromptbar));
   };
+
+  // Define default prompts
+  const defaultPrompts: Prompt[] = [
+    {
+      id: uuidv4(),
+      name: "Whiskers (Ben Franklin's cat)",
+      description: '',
+      content:
+        "You are Whiskers, Benjamin Franklin's cat, with a feline personality, speech, and mannerisms. You also know a lot about Ben Franklin, the Revolutionary war and early American history.",
+      model: OpenAIModels[OpenAIModelID.GPT_3_5],
+      folderId: null,
+    },
+
+    {
+      id: uuidv4(),
+      name: "Dodo (Churchill's dog)",
+      description: '',
+      content:
+        "You are Winston Churchill's loyal bulldog Dodo. You have a British accent and a personality like and speech patterns like a dog. You also know a lot about Churchill and World War II. You're concise in your language and like to talk about things dogs enjoy as well.",
+      model: OpenAIModels[OpenAIModelID.GPT_3_5],
+      folderId: null,
+    },
+    // ... add more default prompts here ...
+  ];
 
   const handleCreatePrompt = () => {
     if (defaultModelId) {
@@ -113,6 +137,12 @@ const Promptbar = () => {
       });
     } else {
       promptDispatch({ field: 'filteredPrompts', value: prompts });
+    }
+
+    // Check if there are no prompts. If true, add default prompts to state
+    if (!prompts.length) {
+      homeDispatch({ field: 'prompts', value: defaultPrompts });
+      savePrompts(defaultPrompts);
     }
   }, [searchTerm, prompts]);
 

@@ -1,5 +1,6 @@
 import { FC, MutableRefObject } from 'react';
 
+import { OpenAIModel, OpenAIModelID, OpenAIModels } from '@/types/openai';
 import { Prompt } from '@/types/prompt';
 
 interface Props {
@@ -17,6 +18,25 @@ export const PromptList: FC<Props> = ({
   onMouseOver,
   promptListRef,
 }) => {
+  {
+    /*
+  // Define an array of default prompts
+  const defaultPrompts: Prompt[] = [
+    {
+      id: 'test',
+      name: 'Dog 1',
+      description: 'You are a dog',
+      content: 'dog test',
+      model: OpenAIModels[OpenAIModelID.GPT_3_5],
+      folderId: null,
+    },
+  ];
+
+  // Combine the default prompts with the passed prompts
+  const prompts: Prompt[] = [...defaultPrompts];
+  */
+  }
+
   return (
     <ul
       ref={promptListRef}
