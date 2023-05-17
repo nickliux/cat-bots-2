@@ -268,6 +268,7 @@ export const ChatInput = ({
           </button>
         )}
 
+        {/*
         {!messageIsStreaming &&
           selectedConversation &&
           selectedConversation.messages.length > 0 && (
@@ -278,6 +279,7 @@ export const ChatInput = ({
               <IconRepeat size={16} /> {t('Regenerate response')}
             </button>
           )}
+          */}
 
         <div className="relative mx-2 flex w-full flex-grow flex-col rounded-md border border-black/10 bg-white shadow-[0_0_10px_rgba(0,0,0,0.10)] dark:border-gray-900/50 dark:bg-[#40414F] dark:text-white dark:shadow-[0_0_15px_rgba(0,0,0,0.10)] sm:mx-4">
           <button
@@ -379,18 +381,19 @@ export const ChatInput = ({
           )}
         </div>
       </div>
+      
       <div className="px-3 pt-2 pb-3 text-center text-[12px] text-black/50 dark:text-white/50 md:px-4 md:pt-3 md:pb-6">
         <a
-          href="https://github.com/mckaywrigley/chatbot-ui"
+          href="https://github.com/nickliux/cat-bots-2"
           target="_blank"
           rel="noreferrer"
           className="underline"
         >
-          ChatBot UI
+          CatBot
         </a>
-        .{' '}
+        {' '}
         {t(
-          "Chatbot UI is an advanced chatbot kit for OpenAI's chat models aiming to mimic ChatGPT's interface and functionality.",
+          "lets you chat with the furry friends of historical heros. It's built off of open-source code and GPT.",
         )}
       </div>
     </div>
